@@ -5,6 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mona</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
 
   <style>
     body {
@@ -72,8 +74,6 @@
     const isIOS = /iPad|iPhone|iPod/.test(ua);
     const isAndroid = /Android/.test(ua);
 
-    // Petite attente pour laisser la page apparaître
-    // si le redirect est bloqué ou lent.
     window.onload = () => {
       setTimeout(() => {
         if (isIOS) {
@@ -89,10 +89,6 @@
 <body>
   <div class="card">
     <img class="logo" src="mona_banner.png" alt="Mona" />
-
-    <p>
-      Redirection vers le store...
-    </p>
 
     <div class="links">
       <a class="button" href="https://apps.apple.com/fr/app/mona-hrt-journal/id6757274628">
