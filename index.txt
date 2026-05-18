@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mona</title>
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+
+    .card {
+      max-width: 420px;
+      width: 100%;
+    }
+
+    h1 {
+      margin-bottom: 12px;
+    }
+
+    p {
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+
+    .links {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    a.button {
+      display: block;
+      padding: 14px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: white;
+      background: #2b2b2b;
+      transition: background 0.2s;
+    }
+
+    a.button:hover {
+      background: #3a3a3a;
+    }
+  </style>
+
+  <script>
+    const appStoreUrl =
+      "https://apps.apple.com/fr/app/mona-hrt-journal/id6757274628";
+
+    const playStoreUrl =
+      "https://play.google.com/store/apps/details?id=com.deliacheminot.mona";
+
+    const githubUrl =
+      "https://github.com/mona-hrt/mona";
+
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    const isIOS = /iPad|iPhone|iPod/.test(ua);
+    const isAndroid = /Android/.test(ua);
+
+    // Petite attente pour laisser la page apparaître
+    // si le redirect est bloqué ou lent.
+    window.onload = () => {
+      setTimeout(() => {
+        if (isIOS) {
+          window.location.href = appStoreUrl;
+        } else if (isAndroid) {
+          window.location.href = playStoreUrl;
+        }
+      }, 600);
+    };
+  </script>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Mona</h1>
+
+    <p>
+      Redirection vers le store…
+      <br />
+      Si rien ne se passe, utilise les liens ci-dessous.
+    </p>
+
+    <div class="links">
+      <a class="button"
+         href="https://apps.apple.com/fr/app/mona-hrt-journal/id6757274628">
+        Télécharger sur l’App Store
+      </a>
+
+      <a class="button"
+         href="https://play.google.com/store/apps/details?id=com.deliacheminot.mona">
+        Télécharger sur Google Play
+      </a>
+
+      <a class="button"
+         href="https://github.com/mona-hrt/mona">
+        Voir le projet GitHub
+      </a>
+    </div>
+  </div>
+</body>
+</html>
